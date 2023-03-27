@@ -2,64 +2,44 @@ package idea.tad;
 
 public class Tad {
 
-    public double xa;
-    public double xb;
-    public double ya;
-    public double yb;
-    public double Dab;
+    //atributos
+    private double Xa;
+    private double Xb;
+    private double Ya;
+    private double Yb;
+    private double Dab;
 
-    public Tad(double xa, double xb, double ya, double yb){
+    //construtor
+    public Tad(double xa, double ya, double xb, double yb){
 
-        this.xa = xa;
-        this.xb = xb;
-        this.ya = ya;
-        this.yb = yb;
+        setXa(xa);
+        setXa(ya);
+        setXa(xb);
+        setXa(yb);
 
     }
 
-    public double getXa() {
-        return xa;
-    }
+    //getters
+    private double getXa() {return Xa; }
+    private double getXb() {return Xb; }
+    private double getYa() { return Ya; }
+    private double getYb() { return Yb; }
+    private double getDab() {
+        calculoDab();
+        return Dab; }
 
-    public double getXb() {
-        return xb;
-    }
+    // Método que calcule a distância euclidiana entre dois pontos
+    private void calculoDab() { setDab(Math.sqrt(Math.pow(Xb - Xa, 2) + Math.pow(Yb - Ya, 2))); }
 
-    public double getYa() {
-        return ya;
-    }
+    //Setters
+    private void setXa(double xa){ this.Xa = xa; }
+    private void setXb(double xb){ this.Xb = xb; }
+    private void setYa(double ya){ this.Ya = ya; }
+    private void setYb(double yb){ this.Yb = yb; }
+    private void setDab(double Dab){ this.Dab = Dab; }
 
-    public double getYb() {
-        return yb;
-    }
-
-    public double getDab(){
-        return Dab;
-    }
-
-    public void setXa(double xa){
-        this.xa = xa;
-    }
-
-    public void setXb(double xb){
-        this.xb = xb;
-    }
-
-    public void setYa(double ya){
-        this.ya = ya;
-    }
-
-    public void setYb(double yb){
-        this.yb = yb;
-    }
-
-    public void setDab(double Dab){
-        this.Dab = Dab;
-    }
-
-    public void CalculoDaDistancia (){
-        setDab(Math.sqrt(Math.pow(xb - xa, 2) + Math.pow(yb - ya, 2)));
-    }
+    //To string
+    public String toString() { return "O resultado é de: " + getDab(); }
 
 
 
