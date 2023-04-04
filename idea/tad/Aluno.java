@@ -6,6 +6,7 @@ public class Aluno {
     private double nota;
     private int idade;
 
+
     public String getNome() {
         return nome;
     }
