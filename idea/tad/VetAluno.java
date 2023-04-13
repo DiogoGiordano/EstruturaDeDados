@@ -7,7 +7,6 @@ public class VetAluno implements Ialuno{
     private Aluno[] alunos;
     private int totalAlunos;
 
-
     public VetAluno(int tamanho){
         alunos = new Aluno[tamanho];
     }
@@ -42,6 +41,23 @@ public class VetAluno implements Ialuno{
             }
             alunos = novosAlunos;
         }
+    }
+
+    public boolean remover(String al){
+        int indice = -1;
+        for(int i = 0; i < totalAlunos; i++)
+            if(Objects.equals(al, alunos[i].getNome())){
+                indice = i; break;
+            }
+        if (indice != -1){
+            for(int i=indice; i<(totalAlunos-1); i++)
+                alunos[i] = alunos[i+1];
+            totalAlunos--;
+            return true;
+        }
+        return false;
+
+
     }
 
     public void adicionar(Aluno al){

@@ -13,10 +13,9 @@ public class Aluno {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    private double getNota() {
+    public double getNota() {
         return nota;
     }
-    private void setNota(double nota) {
         this.nota = nota;
     }
     public int getIdade() {
