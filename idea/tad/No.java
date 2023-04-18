@@ -2,15 +2,15 @@ package idea.tad;
 
 public class No {
 
-    private int info;
+    private Object info;
     private No prox;
 
-    public No(int info) {
+    public No(Object info) {
         this.info = info;
         this.prox = null;
     }
 
-    public int getInfo() {
+    public Object getInfo() {
         return info;
     }
 

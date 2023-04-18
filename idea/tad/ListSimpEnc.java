@@ -1,15 +1,17 @@
 package idea.tad;
 
-public class ListSimpEnc implements Lista{
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class ListSimpEnc implements Lista {
 
     private No ini;
 
-    public ListSimpEnc()
-    {
+    public ListSimpEnc() {
         this.ini = null;
     }
 
-    public void insereInicio(int info) {
+    public void insereInicio(Object info) {
         No novo = new No(info);
         if (ini == null)
             ini = novo;
@@ -20,7 +22,7 @@ public class ListSimpEnc implements Lista{
 
     }
 
-    public void insereFim(int info) {
+    public void insereFim(Object info) {
         No novo = new No(info);
         if (ini == null)
             ini = novo;
@@ -39,17 +41,17 @@ public class ListSimpEnc implements Lista{
             return false;
     }
 
-    public boolean remove(int info) {
+    public boolean remove(Object info) {
         No ant = null, p;
         p = ini;
-        while (p!=null && p.getInfo() != info){
+        while (p != null && p.getInfo() != info) {
             ant = p;
             p = p.getProx();
         }
-        if (p==null)
+        if (p == null)
             return false;
-        if (ant==null)
-            ini= p.getProx();
+        if (ant == null)
+            ini = p.getProx();
         else
             ant.setProximo(p.getProx());
         return true;
@@ -58,10 +60,10 @@ public class ListSimpEnc implements Lista{
 
     public int tamanho() {
 
-        if(ini == null)
-        return 0;
+        if (ini == null)
+            return 0;
 
-        else{
+        else {
             int tamanho = 0;
             for (No i = ini; i != null; i = i.getProx())
                 tamanho++;
@@ -69,5 +71,17 @@ public class ListSimpEnc implements Lista{
             return tamanho;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        if (ini == null)
+            return "A Lista esta vazia";
+        else {
+            for (No i = ini; i != null; i = i.getProx()) {
+                System.out.print("\n" + i.getInfo());
+            }
+        }
+        return "\nFim da lista";
     }
 }
