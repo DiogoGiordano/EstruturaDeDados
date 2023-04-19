@@ -2,15 +2,16 @@ package idea.tad;
 
 public class No {
 
-    private Object info;
+    private int info;
     private No prox;
+    private No ant;
 
-    public No(Object info) {
+    public No(int info) {
         this.info = info;
         this.prox = null;
     }
 
-    public Object getInfo() {
+    public int getInfo() {
         return info;
     }
 
@@ -22,4 +23,11 @@ public class No {
         return n;
     }
 
+    public No getAnt() {
+        return ant;
+    }
+
+    public void setAnt(No ant) {
+        this.ant = ant;
+    }
 }

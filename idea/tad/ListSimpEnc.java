@@ -11,7 +11,7 @@ public class ListSimpEnc implements Lista {
         this.ini = null;
     }
 
-    public void insereInicio(Object info) {
+    public void insereInicio(int info) {
         No novo = new No(info);
         if (ini == null)
             ini = novo;
@@ -22,7 +22,7 @@ public class ListSimpEnc implements Lista {
 
     }
 
-    public void insereFim(Object info) {
+    public void insereFim(int info) {
         No novo = new No(info);
         if (ini == null)
             ini = novo;
@@ -41,7 +41,7 @@ public class ListSimpEnc implements Lista {
             return false;
     }
 
-    public boolean remove(Object info) {
+    public boolean remove(int info) {
         No ant = null, p;
         p = ini;
         while (p != null && p.getInfo() != info) {

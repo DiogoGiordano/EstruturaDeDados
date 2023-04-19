@@ -2,13 +2,13 @@ package idea.tad;
 
 
 public interface Lista {
-    public void insereInicio(Object info);
+    public void insereInicio(int info);
 
-    public void insereFim(Object info);
+    public void insereFim(int info);
 
     public boolean estaVazia();
 
-    public boolean remove(Object info);
+    public boolean remove(int info);
 
     public int tamanho();
 }
