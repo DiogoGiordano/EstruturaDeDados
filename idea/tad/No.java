@@ -2,7 +2,7 @@ package idea.tad;
 
 public class No {
 
-    private int info;
+    private final int info;
     private No prox;
     private No ant;
 

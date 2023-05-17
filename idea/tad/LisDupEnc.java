@@ -37,6 +37,15 @@ public class LisDupEnc implements Lista{
         }
     }
 
+    public No busca(int info) {
+        No resultado = null;
+        for (No i = ini; i != null ; i = i.getProx()) {
+            if (i.getInfo() == info)
+                resultado = i;
+        }
+        return resultado;
+    }
+
     public boolean estaVazia() {
         if (ini == null)
             return true;
@@ -45,16 +54,14 @@ public class LisDupEnc implements Lista{
     }
 
     public boolean remove(int info) {
-        No p = ini;
-        while (ini !=null && p.getInfo() != info)
-            ini = ini.getProx();
-        if (ini==null)
+        No p = busca(info);
+        if (p == null)
             return false;
-        if (p.equals(ini)){
+        if (p.getAnt() == null) {
             ini = p.getProx();
-            if (ini != null) ini.setAnt(null);
-            else fim = null;
-        } else if (p.getProx() == null){
+            if (ini != null)
+                ini.setAnt(null);
+        } else if (p.getProx() == null) {
             p.getAnt().setProximo(null);
             fim = p.getAnt();
         } else {
@@ -94,12 +101,8 @@ public class LisDupEnc implements Lista{
         if (ini == null)
             return "A Lista esta vazia";
         else {
-            Vetor[] vet = new Vetor[tamanho()];
-            for (No i = ini; i != null; i = i.getProx()) {
-                Vetor vetor = vet[i.getInfo()];
-            }
-            for (int i = tamanho(); i <= vet.length; --i){
-                System.out.print(vet[i]);
+            for (No i = fim; i != null; i = i.getAnt()) {
+                System.out.print("\n" + i.getInfo());
             }
         }
         return "\nFim da lista";
