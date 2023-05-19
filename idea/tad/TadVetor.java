@@ -1,5 +1,7 @@
 package idea.tad;
 
+import java.util.Random;
+
 public class TadVetor {
 
     private int max1;
@@ -19,9 +21,21 @@ public class TadVetor {
     }
 
     public void preencher(){
-        for (int i = 0; i < totalvalores; i++)
-            valores[i] = i + i;
 
+        Random gerador = new Random();
+        for (int i = 0; i < totalvalores; i++)
+            valores[i] = gerador.nextInt(1000);
+
+    }
+
+    public void ordenar(){
+        for (int i = 0; i < totalvalores; i++)
+            for (int j = 0; j < totalvalores-1; j++)
+                if (valores[j] > valores[j+1]) {
+                    int aux = valores[j];
+                    valores[j] = valores[j+1];
+                    valores[j+1] = aux;
+                }
     }
 
     public int maximoRec(int inicio, int fim) {
@@ -36,6 +50,14 @@ public class TadVetor {
             else {
                 return max2;
             }
+    }
+
+    public int maximoInterativo(int valor){
+        for (int i = 0; i < totalvalores; i++) {
+            if (valores[i] == valor)
+                return i;
+        }
+        return 0;
     }
 
     public int pesquisaRec (int valor) {
@@ -54,5 +76,15 @@ public class TadVetor {
         return 0;
     }
 
+    public String imprimirListaED() {
+        if (valores == null)
+            return "A Lista esta vazia";
+        else {
+            for (int valore : valores) {
+                System.out.print("\n" + valore);
+            }
+        }
+        return "\nFim da lista";
+    }
 
 }

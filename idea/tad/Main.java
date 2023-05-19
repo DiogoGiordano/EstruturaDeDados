@@ -1,27 +1,30 @@
 package idea.tad;
 
-import java.util.Date;
-
 public class Main{
     public static void main (String[] args){
 
+        TadVetor tdrec = new TadVetor(1000);
+        TadVetor tdint = new TadVetor(1000);
 
-        //TadVetor vet = new TadVetor(1001);
+        long inicialTime1 = System.nanoTime();
 
-        TadVetor vetor = new TadVetor(1000);
-        vetor.preencher();
-        //vet.preencher();
+        tdrec.maximoRec(1,999);
 
+        long finalTime1 = System.nanoTime();
 
-        final long startTime = System.nanoTime();
-
-        //vet.maximoRec(1,1000);
-        vetor.pesquisaRec(1998);
+        System.out.print("\nTempo de execução do método recursivo: " + (finalTime1 - inicialTime1));
 
 
-        final long endTime = System.nanoTime();
 
-        System.out.println(endTime - startTime);
+
+        long inicialTime2 = System.nanoTime();
+
+        tdint.maximoInterativo(2000);
+
+        long finalTime2 = System.nanoTime();
+
+
+        System.out.print("\nTempo de execução do método iterativo: " + (finalTime2 - inicialTime2));
 
     }
 }
