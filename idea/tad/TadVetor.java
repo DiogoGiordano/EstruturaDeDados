@@ -38,6 +38,41 @@ public class TadVetor {
                 }
     }
 
+    public void bubble_sort(){
+        for (int i = 0; i < totalvalores; i++)
+            for (int j = 0; j < totalvalores-1; j++)
+                if (valores[j] > valores[j+1]) {
+                    int aux = valores[j];
+                    valores[j] = valores[j+1];
+                    valores[j+1] = aux;
+                }
+    }
+
+    public void selection_sort(){
+        for (int i = 0; i < totalvalores; i++) {
+            int menor = i;
+            for (int j = i+1; j < totalvalores; j++)
+                if (valores[j] < valores[menor])
+                    menor = j;
+            int aux = valores[i];
+            valores[i] = valores[menor];
+            valores[menor] = aux;
+        }
+    }
+
+    public void insertion_sort() {
+        for (int i = 1; i < totalvalores; i++) {
+            int chave = valores[i];
+            int j = i - 1;
+            while (j >= 0 && chave < valores[j]) {
+                valores[j + 1] = valores[j];
+                j--;
+            }
+            valores[j + 1] = chave;
+        }
+    }
+
+
     public int maximoRec(int inicio, int fim) {
         if (inicio == fim) {
                 return valores[inicio];
