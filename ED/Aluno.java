@@ -22,7 +22,7 @@ public class Aluno {
     public int getIdade() {
         return idade;
     }
-    private void setIdade(int idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 

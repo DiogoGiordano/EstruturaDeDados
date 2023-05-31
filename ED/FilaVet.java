@@ -4,14 +4,14 @@ public class FilaVet implements IFila{
 
     private int nElemFila;
     private int inicio;
-    private Object[] vetFila;
+    private Aluno[] vetFila;
     public FilaVet (int tamFila){
         this.nElemFila = 0;
         this.inicio = 0;
-        this.vetFila = new Object[tamFila];
+        this.vetFila = new Aluno[tamFila];
     }
 
-    public boolean add(Object info){
+    public boolean add(Aluno info){
         if (this.nElemFila == vetFila.length) {
             System.out.println("Capacidade da fila esgotou");
             return false;
@@ -46,7 +46,7 @@ public class FilaVet implements IFila{
 
     public void printList(){
         for (int i = nElemFila - 1; i >= 0; i--){
-            System.out.print(" [" + vetFila[i] + "] ");
+            System.out.print("[" + vetFila[i].getNome() + ", "+ vetFila[i].getIdade() + ", "+ vetFila[i].getNota() + "] ");
         }
     }
 
