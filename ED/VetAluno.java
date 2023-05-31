@@ -1,4 +1,4 @@
-package idea.tad;
+package ED;
 
 import java.util.Objects;
 

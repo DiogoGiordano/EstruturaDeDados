@@ -1,4 +1,4 @@
-package idea.tad;
+package ED;
 
 public class No {
 
@@ -19,8 +19,8 @@ public class No {
         return prox;
     }
 
-    public No setProximo(No n) { this.prox = n;
-        return n;
+    public void setProximo(No prox) {
+        this.prox = prox;
     }
 
     public No getAnt() {

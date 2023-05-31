@@ -1,9 +1,11 @@
-package idea.tad;
+package ED;
 
 public class LisDupEnc implements Lista{
 
     private No ini;
     private No fim;
+
+    private int npares;
 
     public LisDupEnc(){
         this.ini = null;
@@ -88,7 +90,7 @@ public class LisDupEnc implements Lista{
 
     public String imprimirListaDE() {
         if (ini == null)
-            return "A Lista esta vazia";
+            return "A idea.Lista esta vazia";
         else {
             for (No i = ini; i != null; i = i.getProx()) {
                 System.out.print("\n" + i.getInfo());
@@ -99,7 +101,7 @@ public class LisDupEnc implements Lista{
 
     public String imprimirListaED() {
         if (ini == null)
-            return "A Lista esta vazia";
+            return "A idea.Lista esta vazia";
         else {
             for (No i = fim; i != null; i = i.getAnt()) {
                 System.out.print("\n" + i.getInfo());

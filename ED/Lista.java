@@ -1,5 +1,4 @@
-package idea.tad;
-
+package ED;
 
 public interface Lista {
     public void insereInicio(int info);

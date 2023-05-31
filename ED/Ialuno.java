@@ -1,5 +1,4 @@
-package idea.tad;
-
+package ED;
 public interface Ialuno {
 
     public void adicionar(Aluno al);

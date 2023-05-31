@@ -1,4 +1,4 @@
-package idea.tad;
+package ED;
 
 import java.util.Random;
 
@@ -21,11 +21,15 @@ public class TadVetor {
     }
 
     public void preencher(){
-
         Random gerador = new Random();
         for (int i = 0; i < totalvalores; i++)
             valores[i] = gerador.nextInt(1000);
 
+    }
+
+    public void adicionar(int[] numero){
+        for (int i = 0; i < totalvalores; i++)
+            valores[i] = numero[i];
     }
 
     public void ordenar(){
@@ -72,7 +76,6 @@ public class TadVetor {
         }
     }
 
-
     public int maximoRec(int inicio, int fim) {
         if (inicio == fim) {
                 return valores[inicio];
@@ -113,7 +116,7 @@ public class TadVetor {
 
     public String imprimirListaED() {
         if (valores == null)
-            return "A Lista esta vazia";
+            return "A idea.Lista esta vazia";
         else {
             for (int valore : valores) {
                 System.out.print("\n" + valore);
