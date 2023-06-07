@@ -9,19 +9,19 @@ public class ListSimpEnc implements Lista {
         this.ini = null;
     }
 
-    public void insereInicio(int info) {
+    public void insereInicio(Object info) {
         No novo = new No(info);
         if (ini == null) {
             ini = novo;
         }
         else {
-            novo.setProximo(ini);
+            novo.setProx(ini);
             ini = novo;
         }
 
     }
 
-    public void insereFim(int info) {
+    public void insereFim(Object info) {
         No novo = new No(info);
         if (ini == null)
             ini = novo;
@@ -29,7 +29,7 @@ public class ListSimpEnc implements Lista {
             No ultimo = null;
             for (No i = ini; i != null; i = i.getProx())
                 ultimo = i;
-            ultimo.setProximo(novo);
+            ultimo.setProx(novo);
         }
     }
 
@@ -40,7 +40,7 @@ public class ListSimpEnc implements Lista {
             return false;
     }
 
-    public boolean remove(int info) {
+    public boolean remove(Object info) {
         No ant = null, p;
         p = ini;
         while (p != null && p.getInfo() != info) {
@@ -52,7 +52,7 @@ public class ListSimpEnc implements Lista {
         if (ant == null)
             ini = p.getProx();
         else
-            ant.setProximo(p.getProx());
+            ant.setProx(p.getProx());
         return true;
 
     }

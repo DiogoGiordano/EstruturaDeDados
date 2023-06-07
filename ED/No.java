@@ -2,16 +2,16 @@ package ED;
 
 public class No {
 
-    private final int info;
+    private Object info;
     private No prox;
     private No ant;
 
-    public No(int info) {
+    public No(Object info) {
         this.info = info;
         this.prox = null;
     }
 
-    public int getInfo() {
+    public Object getInfo() {
         return info;
     }
 
@@ -19,7 +19,7 @@ public class No {
         return prox;
     }
 
-    public void setProximo(No prox) {
+    public void setProx(No prox) {
         this.prox = prox;
     }
 

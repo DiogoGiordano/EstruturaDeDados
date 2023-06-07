@@ -3,29 +3,25 @@ package ED;
 public class Main{
     public static void main (String[] args){
 
-        FilaVet f = new FilaVet(5);
+        PilhaVet p = new PilhaVet(3);
+        p.Push(12);
+        p.Push(13);
+        p.Push(45);
 
-        Aluno l = new Aluno();
-        Aluno l1 = new Aluno();
-        Aluno l2 = new Aluno();
+        p.imprimePilha();
 
-        l.setNome("jesse");
-        l1.setNome("ahti");
-        l2.setNome("dylan");
+        p.pop();
 
-        l.setNota(1);
-        l1.setNota(3);
-        l2.setNota(4);
+        p.imprimePilha();
 
-        l.setIdade(20);
-        l1.setIdade(22);
-        l2.setIdade(33);
+        System.out.println(p.palindromo(119911));
+        System.out.println(p.palindromo(229922));
+        System.out.println(p.palindromo("arara"));
+        System.out.println(p.palindromo("ana"));
+        System.out.println(p.palindromo("dylan"));
+        System.out.println(p.palindromo(122112));
 
-        f.add(l);
-        f.add(l1);
-        f.add(l2);
 
-        f.printList();
 
 
     }

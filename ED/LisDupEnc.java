@@ -1,3 +1,4 @@
+/*
 package ED;
 
 public class LisDupEnc implements Lista{
@@ -110,3 +111,6 @@ public class LisDupEnc implements Lista{
         return "\nFim da lista";
     }
 }
+
+
+ */
