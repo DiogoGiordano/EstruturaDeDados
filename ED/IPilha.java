@@ -2,7 +2,7 @@ package ED;
 
 public interface IPilha {
 
-    boolean Push(Object info);
+    boolean push(Object info);
     Object pop();
     Object top();
     boolean isEmpty();

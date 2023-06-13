@@ -1,13 +1,13 @@
 package ED;
 
 public interface Lista {
-    void insereInicio(Object info);
+    void insereInicio(Aluno info);
 
-    void insereFim(Object info);
+    void insereFim(Aluno info);
 
     boolean estaVazia();
 
-    boolean remove(Object info);
+    boolean remove(Aluno info);
 
     int tamanho();
 }

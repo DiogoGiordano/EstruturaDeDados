@@ -2,14 +2,17 @@ package ED;
 
 public class PilhaVet implements IPilha {
 
+
     private Object[] pilha;
     private int numElem;
     public PilhaVet (int tamanhoVetor){
         this.pilha = new Object[tamanhoVetor];
         this.numElem = 0;
+
     }
 
-    public boolean Push(Object info){
+
+    public boolean push(Object info){
         if (numElem == pilha.length){
             System.out.println("pilha estourou");
             return false;
@@ -63,4 +66,5 @@ public class PilhaVet implements IPilha {
         else
             System.out.println("Pilha vazia");
     }
+
 }

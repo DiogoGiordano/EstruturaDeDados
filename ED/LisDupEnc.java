@@ -3,8 +3,10 @@ package ED;
 
 public class LisDupEnc implements Lista{
 
-    private No ini;
-    private No fim;
+    private NoAl ini;
+
+    private NoAl fim;
+
 
     private int npares;
 
@@ -14,7 +16,7 @@ public class LisDupEnc implements Lista{
     }
 
     public void insereInicio(int info) {
-        No novo = new No(info);
+        NoAl novo = new NoAl(info);
         if (ini == null) {
             ini = novo;
             fim = novo;
@@ -28,7 +30,7 @@ public class LisDupEnc implements Lista{
     }
 
     public void insereFim(int info) {
-        No novo = new No(info);
+        NoAl novo = new NoAl(info);
         if (ini == null) {
             ini = novo;
             fim = novo;
@@ -40,9 +42,9 @@ public class LisDupEnc implements Lista{
         }
     }
 
-    public No busca(int info) {
-        No resultado = null;
-        for (No i = ini; i != null ; i = i.getProx()) {
+    public NoAl busca(int info) {
+        NoAl resultado = null;
+        for (NoAl i = ini; i != null ; i = i.getProx()) {
             if (i.getInfo() == info)
                 resultado = i;
         }
@@ -57,7 +59,7 @@ public class LisDupEnc implements Lista{
     }
 
     public boolean remove(int info) {
-        No p = busca(info);
+        NoAl p = busca(info);
         if (p == null)
             return false;
         if (p.getAnt() == null) {
@@ -81,7 +83,7 @@ public class LisDupEnc implements Lista{
 
         else {
             int tamanho = 0;
-            for (No i = ini; i != null; i = i.getProx())
+            for (NoAl i = ini; i != null; i = i.getProx())
                 tamanho++;
 
             return tamanho;
@@ -93,7 +95,7 @@ public class LisDupEnc implements Lista{
         if (ini == null)
             return "A idea.Lista esta vazia";
         else {
-            for (No i = ini; i != null; i = i.getProx()) {
+            for (NoAl i = ini; i != null; i = i.getProx()) {
                 System.out.print("\n" + i.getInfo());
             }
         }
@@ -104,7 +106,7 @@ public class LisDupEnc implements Lista{
         if (ini == null)
             return "A idea.Lista esta vazia";
         else {
-            for (No i = fim; i != null; i = i.getAnt()) {
+            for (NoAl i = fim; i != null; i = i.getAnt()) {
                 System.out.print("\n" + i.getInfo());
             }
         }

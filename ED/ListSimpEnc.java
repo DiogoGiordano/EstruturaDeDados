@@ -2,15 +2,15 @@ package ED;
 
 public class ListSimpEnc implements Lista {
 
-    private No ini;
+    private NoAl ini;
     private int total;
 
     public ListSimpEnc() {
         this.ini = null;
     }
 
-    public void insereInicio(Object info) {
-        No novo = new No(info);
+    public void insereInicio(Aluno info) {
+        NoAl novo = new NoAl(info);
         if (ini == null) {
             ini = novo;
         }
@@ -21,13 +21,13 @@ public class ListSimpEnc implements Lista {
 
     }
 
-    public void insereFim(Object info) {
-        No novo = new No(info);
+    public void insereFim(Aluno info) {
+        NoAl novo = new NoAl(info);
         if (ini == null)
             ini = novo;
         else {
-            No ultimo = null;
-            for (No i = ini; i != null; i = i.getProx())
+            NoAl ultimo = null;
+            for (NoAl i = ini; i != null; i = i.getProx())
                 ultimo = i;
             ultimo.setProx(novo);
         }
@@ -40,8 +40,8 @@ public class ListSimpEnc implements Lista {
             return false;
     }
 
-    public boolean remove(Object info) {
-        No ant = null, p;
+    public boolean remove(Aluno info) {
+        NoAl ant = null, p;
         p = ini;
         while (p != null && p.getInfo() != info) {
             ant = p;
@@ -63,12 +63,18 @@ public class ListSimpEnc implements Lista {
 
         else {
             int tamanho = 0;
-            for (No i = ini; i != null; i = i.getProx())
+            for (NoAl i = ini; i != null; i = i.getProx())
                 tamanho++;
 
             return tamanho;
         }
 
+    }
+
+    public String toString (){
+        for (NoAl i = ini; i != null; i = i.getProx())
+            return String.valueOf(i.getInfo());
+        return "fim da lista";
     }
 
 }

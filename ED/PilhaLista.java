@@ -8,7 +8,7 @@ public class PilhaLista implements IPilha{
         this.topo = null;
     }
 
-    public boolean Push(Object info){
+    public boolean push(Object info){
         No novo = new No(info);
         if (this.isEmpty())
             topo = novo;
