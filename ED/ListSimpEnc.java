@@ -21,6 +21,10 @@ public class ListSimpEnc implements Lista {
 
     }
 
+    public NoAl getInicio(){
+        return ini;
+    }
+
     public void insereFim(Aluno info) {
         NoAl novo = new NoAl(info);
         if (ini == null)
@@ -71,10 +75,8 @@ public class ListSimpEnc implements Lista {
 
     }
 
-    public String toString (){
-        for (NoAl i = ini; i != null; i = i.getProx())
-            return String.valueOf(i.getInfo());
-        return "fim da lista";
+    public String dado() {
+        return "Matricula: [" +  ini.getInfo().getMatricula() + "] " + "Nome: [" +  ini.getInfo().getNome() + "] " + "Idade: [" +  ini.getInfo().getIdade() + "] " + "Nota: [" +  ini.getInfo().getNota() + "] ";
     }
 
 }

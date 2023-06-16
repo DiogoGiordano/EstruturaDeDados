@@ -11,7 +11,7 @@ public class MapaHashVetor {
         return chave % vetor.length;
     }
 
-    public int get(int chave) {
+    public long get(int chave) {
         int hash = hash(chave);
         return vetor[hash].getMatricula();
     }
@@ -24,8 +24,8 @@ public class MapaHashVetor {
             if (vetor[hash] == null ||
                     vetor[hash].getMatricula() == chave) {
                 vetor[hash] = valor;
-                return;
-            }
+                    return;
+                }
             sondagem++;
 
         }
@@ -39,12 +39,13 @@ public class MapaHashVetor {
     }
 
     public void priint(){
-        for (int i = 0; i < vetor.length; i++)
-            if(vetor[i] != null)
-            System.out.println(vetor[i].getMatricula());
-        else {
-            System.out.println("vazio");
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i] != null)
+                System.out.println("\nMatricula: [" + vetor[i].getMatricula() + "]" + "\nNome: [" + vetor[i].getNome() + "]" + "\nIdade: [" + vetor[i].getIdade() + "]" + "\nNota: [" + vetor[i].getNota() + "]");
+            else {
+                System.out.println(".");
             }
+        }
     }
 
 }

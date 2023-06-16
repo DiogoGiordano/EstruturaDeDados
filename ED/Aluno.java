@@ -5,15 +5,14 @@ public class Aluno {
     private String nome;
     private double nota;
     private int idade;
-    private int matricula;
+    private long matricula;
 
 
 
-    public int getMatricula() {
+    public long getMatricula() {
         return matricula;
     }
-
-    public void setMatricula(int matricula) {
+    public void setMatricula(long matricula) {
         this.matricula = matricula;
     }
     public String getNome() {

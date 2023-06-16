@@ -15,6 +15,10 @@ public class NoAl {
         return info;
     }
 
+    public void setInfo(Aluno info) {
+        this.info = info;
+    }
+
     public NoAl getProx() {
         return prox;
     }

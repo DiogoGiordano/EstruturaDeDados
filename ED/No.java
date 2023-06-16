@@ -2,6 +2,8 @@ package ED;
 
 public class No {
 
+
+
     private Object info;
     private No prox;
     private No ant;
