@@ -18,13 +18,13 @@ public class MapaHashLSE {
     }
 
     public void put(int chave, Aluno valor) {
+        int hash = hash(chave);
         if(total == vetorLista.length)
             reSize();
-        int hash = hash(chave);
         ListSimpEnc alunos_lista = vetorLista[hash];
         if (alunos_lista == null) {
             alunos_lista = new ListSimpEnc();
-            alunos_lista.insereInicio(valor);
+            alunos_lista.insereFim(valor);
             vetorLista[hash] = alunos_lista;
             total++;
         }
@@ -36,6 +36,7 @@ public class MapaHashLSE {
                 }
             }
             alunos_lista.insereInicio(valor);
+            total++;
         }
     }
 
@@ -62,10 +63,7 @@ public class MapaHashLSE {
     public void print(){
         for(int i = 0; i < vetorLista.length; i++) {
             if (vetorLista[i] != null)
-                System.out.println(vetorLista[i].dado());
-            else {
-                System.out.println("");
-            }
+                System.out.println(vetorLista[i].dado() + " ");
         }
     }
 

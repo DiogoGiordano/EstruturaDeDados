@@ -76,7 +76,7 @@ public class ListSimpEnc implements Lista {
     }
 
     public String dado() {
-        return "Matricula: [" +  ini.getInfo().getMatricula() + "] " + "Nome: [" +  ini.getInfo().getNome() + "] " + "Idade: [" +  ini.getInfo().getIdade() + "] " + "Nota: [" +  ini.getInfo().getNota() + "] ";
+        return "\nMatricula: [" +  ini.getInfo().getMatricula() + "] " + "Nome: [" +  ini.getInfo().getNome() + "] " + "Idade: [" +  ini.getInfo().getIdade() + "] " + "Nota: [" +  ini.getInfo().getNota() + "] ";
     }
 
 }
