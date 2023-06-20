@@ -2,9 +2,9 @@ package ED;
 
 public interface IFila {
 
-    public boolean add(Aluno info);
-    public boolean remove();
-    public boolean isEmpty();
-    public int size();
+    boolean add(Object info);
+    Object remove();
+    boolean isEmpty();
+    int size();
 
 }

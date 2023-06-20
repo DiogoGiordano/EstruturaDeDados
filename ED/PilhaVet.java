@@ -3,16 +3,16 @@ package ED;
 public class PilhaVet implements IPilha {
 
 
-    private Object[] pilha;
+    private Aluno[] pilha;
     private int numElem;
     public PilhaVet (int tamanhoVetor){
-        this.pilha = new Object[tamanhoVetor];
+        this.pilha = new Aluno[tamanhoVetor];
         this.numElem = 0;
 
     }
 
 
-    public boolean push(Object info){
+    public boolean push(Aluno info){
         if (numElem == pilha.length){
             System.out.println("pilha estourou");
             return false;
@@ -21,7 +21,7 @@ public class PilhaVet implements IPilha {
         numElem++;
         return true;
     }
-    public Object top() {
+    public Aluno top() {
         return pilha[numElem - 1];
     }
 
@@ -36,8 +36,8 @@ public class PilhaVet implements IPilha {
         return numElem;
     }
 
-    public Object pop(){
-        Object o = null;
+    public Aluno pop(){
+        Aluno o = null;
         if(isEmpty()){
             System.out.println("Pilha vazia");
             return null;
@@ -48,7 +48,7 @@ public class PilhaVet implements IPilha {
         return o;
     }
 
-    public boolean palindromo(Object info) {
+    public boolean palindromo(Aluno info) {
         String Wbackwards = "";
         for(int i = info.toString().length() - 1; i >= 0; i--)
             Wbackwards += info.toString().charAt(i);

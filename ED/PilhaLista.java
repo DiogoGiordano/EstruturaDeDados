@@ -2,14 +2,14 @@ package ED;
 
 public class PilhaLista implements IPilha{
 
-    private No topo;
+    private NoAl topo;
     private int numElementos;
     public PilhaLista (){
         this.topo = null;
     }
 
-    public boolean push(Object info){
-        No novo = new No(info);
+    public boolean push(Aluno info){
+        NoAl novo = new NoAl(info);
         if (this.isEmpty())
             topo = novo;
         else {
@@ -19,7 +19,7 @@ public class PilhaLista implements IPilha{
         return true;
     }
 
-    public Object top() {
+    public Aluno top() {
         return topo.getInfo();
     }
 
@@ -30,13 +30,13 @@ public class PilhaLista implements IPilha{
     }
 
     public int size() {
-        for(No i = topo; i != null; i.getProx())
+        for(NoAl i = topo; i != null; i.getProx())
             numElementos++;
         return numElementos;
     }
 
-    public Object pop(){
-        Object info = null;
+    public Aluno pop(){
+        Aluno info = null;
         if (!this.isEmpty()){
             info = topo.getInfo();
             topo = topo.getProx();
